@@ -1,0 +1,233 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+    <version>1.0-SNAPSHOT</version>
+	<artifactId>events-handler</artifactId>
+    <packaging>jar</packaging>
+
+    <parent>
+        <artifactId>es-service-maven-parent</artifactId>
+        <groupId>ua.ardas.esputnik</groupId>
+        <version>2.40.84</version>
+    </parent>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <tests.skip>false</tests.skip>
+    </properties>
+
+    <scm>
+        <developerConnection>scm:svn:https://www.ardas.dp.ua/repos/esputnik/trunk/es-services/events/events-handler</developerConnection>
+        <connection>scm:svn:https://www.ardas.dp.ua/repos/esputnik/trunk/es-services/events/events-handler</connection>
+    </scm>
+
+	<build>
+		<finalName>events-handler</finalName>
+	</build>
+
+
+	<dependencies>
+
+        <dependency>
+            <groupId>io.lettuce</groupId>
+            <artifactId>lettuce-core</artifactId>
+            <version>5.2.1.RELEASE</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.integration</groupId>
+            <artifactId>spring-integration-jdbc</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.integration</groupId>
+            <artifactId>spring-integration-redis</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-redis</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-cassandra</artifactId>
+        </dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+		</dependency>
+
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>ua.ardas.esputnik</groupId>
+            <artifactId>es-dao</artifactId>
+            <version>1.67</version>
+        </dependency>
+
+        <dependency>
+            <groupId>ua.ardas.esputnik</groupId>
+            <artifactId>events-commons</artifactId>
+            <version>1.12</version>
+        </dependency>
+
+<!--        <dependency>-->
+<!--            <groupId>ua.ardas.esputnik</groupId>-->
+<!--            <artifactId>redis-commons</artifactId>-->
+<!--        </dependency>-->
+
+<!--        <dependency>-->
+<!--            <groupId>ua.ardas.esputnik</groupId>-->
+<!--            <artifactId>reliable-queue</artifactId>-->
+<!--        </dependency>-->
+
+        <dependency>
+            <groupId>ua.esputnik</groupId>
+            <artifactId>cassandra-utils</artifactId>
+            <version>1.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>ua.ardas.esputnik</groupId>
+            <artifactId>activiti-rest-client</artifactId>
+            <version>1.2</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.unitils</groupId>
+                    <artifactId>unitils-test</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-nop</artifactId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>libphonenumber</artifactId>
+                    <groupId>com.googlecode.libphonenumber</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>ua.ardas.esputnik.service</groupId>
+            <artifactId>orgs-service-api</artifactId>
+            <version>1.9.26</version>
+        </dependency>
+
+        <dependency>
+            <groupId>ua.ardas.esputnik.services</groupId>
+            <artifactId>organisation-client</artifactId>
+            <version>1.4.17</version>
+        </dependency>
+
+        <dependency>
+            <groupId>ua.ardas.esputnik.feign</groupId>
+            <artifactId>spring-mvc-contract</artifactId>
+            <version>1.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>ua.ardas.esputnik</groupId>
+            <artifactId>workflows-api</artifactId>
+            <version>1.6</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.googlecode.libphonenumber</groupId>
+            <artifactId>libphonenumber</artifactId>
+            <version>7.2.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>io.projectreactor</groupId>
+            <artifactId>reactor-core</artifactId>
+            <version>3.1.16.RELEASE</version>
+        </dependency>
+
+        <!-- TEST -->
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.testcontainers</groupId>
+            <artifactId>testcontainers</artifactId>
+            <version>1.12.3</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.jayway.restassured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>2.5.0</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.testcontainers</groupId>
+            <artifactId>cassandra</artifactId>
+            <version>1.12.3</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.tngtech.junit.dataprovider</groupId>
+            <artifactId>junit4-dataprovider</artifactId>
+            <version>2.6</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>ardas-nexus-plugins</id>
+            <url>http://devel.ardas.dp.ua/nexus/content/repositories/ardas-maven</url>
+        </pluginRepository>
+    </pluginRepositories>
+
+    <distributionManagement>
+        <repository>
+            <id>ardas-nexus</id>
+            <url>http://devel.ardas.dp.ua/nexus/content/repositories/ardas-maven</url>
+        </repository>
+    </distributionManagement>
+
+    <repositories>
+        <repository>
+            <id>ardas-nexus</id>
+            <url>http://devel.ardas.dp.ua/nexus/content/repositories/ardas-maven</url>
+        </repository>
+    </repositories>
+</project>
